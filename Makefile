@@ -64,7 +64,7 @@ test:
 virtualenv:
 	mkdir -p $(VIRTUALENV_PATH)
 	rm -rf $(VIRTUALENV_PATH)/$(NAME)
-	virtualenv -p $(PYTHON) --system-site-packages $(VIRTUALENV_PATH)/$(NAME)
+	virtualenv -p $(PYTHON) $(VIRTUALENV_PATH)/$(NAME)
 
 virtualenv-develop: virtualenv
 	$(VIRTUALENV_PATH)/$(NAME)/bin/python setup.py develop
