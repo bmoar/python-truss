@@ -1,0 +1,39 @@
+python_truss(1) - a skeleton python module
+====
+
+## SYNOPSIS
+
+`python_truss` action
+
+
+## DESCRIPTION
+
+python_truss(1) is a minimal skeleton for python projects that sets up helpful things like tests, setup.py, packaging commands, container commands (linux-only), etc
+
+## COMMAND LINE OPTIONS
+
+* `--example` <action>:
+    This is an example action, replace it with a real argument!
+
+## EXAMPLES
+
+    Setup a python virtualenv to do development work
+
+        $ make virtualenv-develop
+
+    Create an LXC and install the module into it for development
+
+        $ make lxc-develop
+
+    Create an LXC and install the project into it for production
+
+        $ make lxc
+
+## DESIGN
+
+Example design section, add some notes about who,what,where,why,when,how in the module. Good things to highlight are important alogorithms, overall design, tricky parts of the code, why you made certain design decisions, etc.
+
+## REPORTING BUGS
+
+There are no bugs.
+
