@@ -44,6 +44,7 @@ clean:
 	rm -rf .tox 
 	rm -rf .coverage 
 	rm -rf .sloccount 
+	rm -rf .cache
 	find . -name '*.pyc.*' -delete
 	find . -name '*.pyc' -delete
 
@@ -58,8 +59,7 @@ flake8:
 	-flake8 --ignore=E501,E221,W291,W391,E302,E251,E203,W293,E231,E303,E201,E225,E261,E241 $(NAME)/lib $(NAME)/cli
 
 test:
-	PYTHONPATH=./$(NAME)/lib $(COVERAGE) run --source=$(NAME) -m $(UNITTESTS) discover -s ./tests
-	$(COVERAGE) report --omit=./tests/* -m
+	py.test --cov-report term --cov=$(NAME) ./tests/*
 
 virtualenv:
 	mkdir -p $(VIRTUALENV_PATH)

@@ -16,8 +16,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'manage = flask_truss.scripts.manage:main_manager',
-            'app = flask_truss.scripts.manage:main_app',
+            'python_truss = python_truss.cli.python_truss:main',
         ]
     }
 )
