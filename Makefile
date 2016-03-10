@@ -66,6 +66,9 @@ virtualenv:
 	rm -rf $(VIRTUALENV_PATH)/$(NAME)
 	virtualenv -p $(PYTHON) $(VIRTUALENV_PATH)/$(NAME)
 
+virtualenv-install: virtualenv
+	$(VIRTUALENV_PATH)/$(NAME)/bin/python setup.py install
+
 virtualenv-develop: virtualenv
 	$(VIRTUALENV_PATH)/$(NAME)/bin/python setup.py develop
 
