@@ -49,6 +49,7 @@ clean:
 	rm -rf .cache
 	find . -name '*.pyc.*' -delete
 	find . -name '*.pyc' -delete
+	find . -name '__pycache__' -delete
 
 loc:
 	mkdir -p .sloccount
