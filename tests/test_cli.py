@@ -1,5 +1,5 @@
-def func(x):
-    return x + 1
+from python_truss.cli.python_truss import main
+
 
 def test_func():
-    assert func(3) == 4
+    assert main() == 0
