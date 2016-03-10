@@ -81,4 +81,8 @@ install:
 	cp -r $(VIRTUALENV_PATH)/$(NAME) $(INSTALL_PATH)/$(NAME)
 	ln -f -s $(INSTALL_PATH)/$(NAME)/bin/$(NAME) $(EXEC_PATH)/$(NAME)
 
+container:
+	bash ./scripts/build.sh -d
+	bash ./scripts/build.sh -b
+
 all: docs flake8 test loc
