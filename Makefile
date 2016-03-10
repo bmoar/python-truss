@@ -15,6 +15,8 @@ NAME = python_truss
 OS = $(shell uname -s)
 PYTHON = $(shell which python3)
 VIRTUALENV_PATH = $(shell echo $$HOME/.virtualenvs)
+INSTALL_PATH = /usr/local/lib
+EXEC_PATH = /usr/local/bin
 
 MANPAGES=$(wildcard docs/man/**/*.*.ronn)
 MANPAGES_GEN=$(patsubst %.ronn,%,$(MANPAGES))
@@ -71,5 +73,12 @@ virtualenv-install: virtualenv
 
 virtualenv-develop: virtualenv
 	$(VIRTUALENV_PATH)/$(NAME)/bin/python setup.py develop
+
+virtualenv-sdist: virtualenv
+	$(VIRTUALENV_PATH)/$(NAME)/bin/python setup.py sdist
+
+install:
+	cp -r $(VIRTUALENV_PATH)/$(NAME) $(INSTALL_PATH)/$(NAME)
+	ln -f -s $(INSTALL_PATH)/$(NAME)/bin/$(NAME) $(EXEC_PATH)/$(NAME)
 
 all: docs flake8 test loc
